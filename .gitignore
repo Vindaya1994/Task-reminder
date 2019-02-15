@@ -1,0 +1,9 @@
+/bin
+/config
+/public/images
+/public/stylesheets
+/routes
+/views
+app.js
+package.json
+package-lock.json
