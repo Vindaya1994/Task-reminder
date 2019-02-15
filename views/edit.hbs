@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      body, html {
+          height: 100%;
+          font-family: "Inconsolata", sans-serif;
+      }
+      .bgimg {
+          background-position: center;
+          background-size: cover;
+          background-image: url("../../image/bg1.png");
+
+          min-height: 45%;
+      }
+      .menu {
+          display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header   class="bgimg w3-display-container w3-grayscale-min" id="home" >
+      <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+        <span class="w3-tag"></span>
+      </div>
+      <div class="w3-display-middle w3-center">
+        <span class="w3-text-white" style="font-size:90px">The<br>To Do App</span>
+      </div>
+      <div class="w3-display-bottomright w3-center w3-padding-large">
+        <span class="w3-text-white"></span>
+      </div>
+    </header>
+
+
+    <!--content-->
+    <div class="w3-row">
+      <div class="w3-col m2 l2 w3-light-gray">
+          <br>
+      </div>
+
+      <!--second coloumn-->
+      <div class="w3-col m8 l8 w3-black">
+        <div class="w3-container w3-padding w3-margine">
+          <p>
+          {{#each taskdata}}
+          <form action="/edit/{{this.id}}" method="POST">
+
+             <input class="w3-input w3-gray w3-round-xxlarge" type="text" placeholder="Add your task" name="task_name" value="{{ this.task_name}}"><br>
+             <button type="submit" class="w3-btn w3-border w3-black w3-right w3-margine w3-padding w3-hover-green"><i class="material-icons" >add</i>Edit Task</button>
+
+          </form>
+          {{/each}}
+          </p>
+        </div>
+      </div>
+      
+      <div class="w3-col m2 l2 w3-light-gray">
+        <br>
+      </div>
+    </div>
+  </body>
+</html>

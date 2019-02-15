@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+      body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+      body {font-size: 16px;}
+      img {margin-bottom: -8px;}
+      .mySlides {display: none;}
+  </style>
+  <body class="w3-content w3-black" style="max-width:1500px;">
+    <header class="w3-display-container w3-center">
+      <div class="mySlides w3-animate-opacity">
+        <img class="w3-image" src="../image/bg1.png" alt="Image 3" style="min-width:500px" width="1500" height="1000">
+        <div class="w3-display-middle w3-padding w3-hide-small" style="width:70%">
+          <div class="w3-light-gray w3-opacity-off w3-hover-opacity-off w3-padding-large w3-round-large">
+            <div class="w3-container">
+              <div class="w3-container w3-opacity w3-hover-opacity-off">
+                <h2>Let's Login</h2>
+              </div>
+                <form class="w3-container" method="POST" action="/loginUser">
+
+                  <label w3-left><p style="text-align: left;">Username</p></label>
+                  <input class="w3-input" type="text" name="username">
+
+                  <label><p style="text-align: left;">Password</p></label>
+                  <input class="w3-input" type="password" name="password"><br>
+                  <div class="w3-left-align">
+                  <button type="submit" class="w3-btn w3-blue-grey">Login</button>
+                  <p>not registered? <a href="/register" > register now </a></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <script>
+        // Slideshow
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+             x[i].style.display = "none";
+          }
+          x[slideIndex-1].style.display = "block";
+        }
+    </script>
+  </body>
+</html>
